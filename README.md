@@ -7,7 +7,7 @@ A collection of opininated JavaScript project starters
 ## React SPA
 
 ```
-npx https://github.com/hanayashiki/js-templates react-spa my-project
+npx github:hanayashiki/js-templates react-spa my-project
 ```
 
 
