@@ -40,7 +40,7 @@ interface Cli {
     throw new Error("The template does not exist. ");
   }
 
-  const targetPath = cli.target;
+  const targetPath = path.resolve(cli.target);
 
   if ((await pathExists(targetPath)) && !cli.force) {
     throw new Error(
@@ -61,11 +61,15 @@ interface Cli {
     "git init",
     "pnpm i",
     "pnpm husky add .husky/pre-commit 'pnpm lint'",
+    cli.template === "npm" && `cd ${targetPath}/example && pnpm i`,
   ];
 
   log(
     "Execute the following commands:\n" +
-      afterCommands.map((c) => `  ${c}`).join("\n")
+      afterCommands
+        .filter(Boolean)
+        .map((c) => `  ${c}`)
+        .join("\n")
   );
 })();
 
