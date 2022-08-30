@@ -4,8 +4,10 @@ A collection of opininated JavaScript project starters
 
 # Starters
 
+## React SPA
+
 ```
-curl https://bun.sh/install | bash
+npx https://github.com/hanayashiki/js-templates react-spa my-project
 ```
 
 
