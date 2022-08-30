@@ -5193,6 +5193,12 @@ var log = (...args) => console.log(red("js-templates"), ...args);
       name: "target",
       type: String,
       positional: true
+    },
+    {
+      name: "force",
+      flags: ["f"],
+      optionalValue: false,
+      type: Boolean
     }
   ]);
   const sourceBasePath = import_node_path.default.join(__dirname, `../template-${cli.template}`);
@@ -5200,6 +5206,13 @@ var log = (...args) => console.log(red("js-templates"), ...args);
     throw new Error("The template does not exist. ");
   }
   const targetPath = cli.target;
+  if (await (0, import_fs_extra2.pathExists)(targetPath) && cli.force) {
+    throw new Error(
+      `Target path ${JSON.stringify(
+        targetPath
+      )} already exists. Use -f to overwrite.`
+    );
+  }
   await copyTemplate(sourceBasePath, targetPath, {
     project_name: import_node_path.default.basename(targetPath)
   });

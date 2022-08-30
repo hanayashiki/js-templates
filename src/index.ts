@@ -12,6 +12,7 @@ import { log } from "./logging";
 interface Cli {
   template: string;
   target: string;
+  force: boolean;
 }
 
 (async () => {
@@ -26,6 +27,11 @@ interface Cli {
       type: String,
       positional: true,
     },
+    {
+      name: "force",
+      flags: ["f"],
+      type: Boolean,
+    },
   ]);
 
   const sourceBasePath = path.join(__dirname, `../template-${cli.template}`);
@@ -35,6 +41,14 @@ interface Cli {
   }
 
   const targetPath = cli.target;
+
+  if ((await pathExists(targetPath)) && !cli.force) {
+    throw new Error(
+      `Target path ${JSON.stringify(
+        targetPath
+      )} already exists. Use -f to overwrite.`
+    );
+  }
 
   await copyTemplate(sourceBasePath, targetPath, {
     project_name: path.basename(targetPath),

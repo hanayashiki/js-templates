@@ -1,6 +1,6 @@
 {
 	"name": "@chenyuwang/js-templates",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "commonjs",
   "main": "dist/index.js",
   "bin": {
@@ -16,6 +16,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
+    "prepare": "pnpm build",
     "dev": "tsx src/index.ts",
     "build": "tsup src/index.ts"
   },
@@ -35,5 +36,8 @@
     "tsup": "^6.2.3",
     "tsx": "^3.9.0",
     "typescript": "^4.8.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
