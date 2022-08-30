@@ -5173,7 +5173,7 @@ var copyTemplate = async (from, to, data) => {
 };
 var transformFile = (content, data) => {
   for (const [key, value] of Object.entries(data)) {
-    content = content.replace("__" + key.toUpperCase() + "__", value);
+    content = content.replaceAll("__" + key.toUpperCase() + "__", value);
   }
   return content;
 };
