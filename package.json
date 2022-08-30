@@ -3,7 +3,7 @@
   "type": "commonjs",
   "main": "dist/index.js",
   "bin": {
-    "@chenyuwang/js-templates": "dist/index.js"
+    "js-templates": "dist/index.js"
   },
   "author": "Chenyu Wang",
   "license": "MIT",
