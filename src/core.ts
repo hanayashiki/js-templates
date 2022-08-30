@@ -39,6 +39,7 @@ export const copyTemplate = async (
 
     const content = (await fs.readFile(file)).toString();
     const transformedContent = transformFile(content, data);
+
     await outputFile(targetPath, transformedContent);
   }
 };
@@ -48,7 +49,7 @@ export const transformFile = (
   data: Record<string, string>
 ) => {
   for (const [key, value] of Object.entries(data)) {
-    content = content.replace("__" + key.toUpperCase() + "__", value);
+    content = content.replaceAll("__" + key.toUpperCase() + "__", value);
   }
 
   return content;

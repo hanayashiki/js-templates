@@ -23,3 +23,19 @@ Based on `pnpm create vite --template react-ts`, and battery-included.
 5. Husky
 6. PNPM
 7. VSCode Extensions
+
+## NPM
+
+```
+npx @chenyuwang/js-templates npm my-project
+```
+
+Public NPM package with Tsup and Vitest.
+
+1. Tsup
+2. Vitest
+3. ESLint + Prettier
+4. Husky
+5. PNPM
+6. VSCode Extensions
+
