@@ -5197,7 +5197,6 @@ var log = (...args) => console.log(red("js-templates"), ...args);
     {
       name: "force",
       flags: ["f"],
-      optionalValue: false,
       type: Boolean
     }
   ]);
@@ -5206,7 +5205,7 @@ var log = (...args) => console.log(red("js-templates"), ...args);
     throw new Error("The template does not exist. ");
   }
   const targetPath = cli.target;
-  if (await (0, import_fs_extra2.pathExists)(targetPath) && cli.force) {
+  if (await (0, import_fs_extra2.pathExists)(targetPath) && !cli.force) {
     throw new Error(
       `Target path ${JSON.stringify(
         targetPath
