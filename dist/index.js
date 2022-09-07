@@ -5204,7 +5204,7 @@ var log = (...args) => console.log(red("js-templates"), ...args);
   if (!await (0, import_fs_extra2.pathExists)(sourceBasePath)) {
     throw new Error("The template does not exist. ");
   }
-  const targetPath = cli.target;
+  const targetPath = import_node_path.default.resolve(cli.target);
   if (await (0, import_fs_extra2.pathExists)(targetPath) && !cli.force) {
     throw new Error(
       `Target path ${JSON.stringify(
@@ -5220,9 +5220,10 @@ var log = (...args) => console.log(red("js-templates"), ...args);
     `cd ${targetPath}`,
     "git init",
     "pnpm i",
-    "pnpm husky add .husky/pre-commit 'pnpm lint'"
+    "pnpm husky add .husky/pre-commit 'pnpm lint'",
+    cli.template === "npm" && `cd ${targetPath}/example && pnpm i`
   ];
   log(
-    "Execute the following commands:\n" + afterCommands.map((c) => `  ${c}`).join("\n")
+    "Execute the following commands:\n" + afterCommands.filter(Boolean).map((c) => `  ${c}`).join("\n")
   );
 })();

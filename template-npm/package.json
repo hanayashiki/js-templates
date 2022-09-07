@@ -17,6 +17,7 @@
     "prepare": "husky install; pnpm build",
     "dev": "tsx src/index.ts",
     "build": "tsup src/index.ts --format esm,cjs && tsc -p tsconfig.build.json",
+    "lint": "tsc && eslint . --ext .ts,.tsx",
     "test": "vitest"
   },
   "devDependencies": {
