@@ -61,7 +61,7 @@ interface Cli {
     "git init",
     "pnpm i",
     "pnpm husky add .husky/pre-commit 'pnpm lint'",
-    cli.template === "npm" && `cd ${targetPath}/example && pnpm i`,
+    cli.template === "npm" && `cd ${targetPath}/example && pnpm i; cd -`,
   ];
 
   log(
