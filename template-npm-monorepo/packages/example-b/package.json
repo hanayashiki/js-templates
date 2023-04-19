@@ -1,0 +1,40 @@
+{
+  "name": "example-b",
+  "version": "0.0.1",
+  "keywords": [],
+  "type": "commonjs",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "module": "./lib/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "src/",
+    "lib/"
+  ],
+  "author": "Chenyu Wang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MonoidDev/__PROJECT_NAME__"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsup src/index.ts --format esm,cjs --splitting -d lib/ && tsc -p tsconfig.build.json",
+    "lint": "tsc && eslint ./src --ext .ts,.tsx",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "example-a": "^0.0.1"
+  },
+  "devDependencies": {
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

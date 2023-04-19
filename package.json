@@ -1,6 +1,6 @@
 {
   "name": "@chenyuwang/js-templates",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "type": "commonjs",
   "main": "dist/index.js",
   "bin": {
@@ -33,9 +33,9 @@
     "kolorist": "^1.5.1",
     "prettier": "^2.7.1",
     "tinyargs": "^0.1.4",
-    "tsup": "^6.2.3",
+    "tsup": "^6.7.0",
     "tsx": "^3.9.0",
-    "typescript": "^4.8.3"
+    "typescript": "^5.0.4"
   },
   "publishConfig": {
     "access": "public"

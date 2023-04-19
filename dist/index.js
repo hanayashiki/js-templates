@@ -18,6 +18,10 @@ var __copyProps = (to, from, except, desc) => {
   return to;
 };
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
@@ -1025,6 +1029,7 @@ var require_mkdirs = __commonJS({
     module2.exports = {
       mkdirs: makeDir,
       mkdirsSync: makeDirSync,
+      // alias
       mkdirp: makeDir,
       mkdirpSync: makeDirSync,
       ensureDir: makeDir,
@@ -2257,14 +2262,17 @@ var require_ensure = __commonJS({
     var { createLink, createLinkSync } = require_link();
     var { createSymlink, createSymlinkSync } = require_symlink();
     module2.exports = {
+      // file
       createFile,
       createFileSync,
       ensureFile: createFile,
       ensureFileSync: createFileSync,
+      // link
       createLink,
       createLinkSync,
       ensureLink: createLink,
       ensureLinkSync: createLinkSync,
+      // symlink
       createSymlink,
       createSymlinkSync,
       ensureSymlink: createSymlink,
@@ -2369,6 +2377,7 @@ var require_jsonfile2 = __commonJS({
     "use strict";
     var jsonFile = require_jsonfile();
     module2.exports = {
+      // jsonfile exports
       readJson: jsonFile.readFile,
       readJsonSync: jsonFile.readFileSync,
       writeJson: jsonFile.writeFile,
@@ -2620,7 +2629,9 @@ var require_lib = __commonJS({
   "node_modules/.pnpm/fs-extra@10.1.0/node_modules/fs-extra/lib/index.js"(exports, module2) {
     "use strict";
     module2.exports = {
+      // Export promiseified graceful-fs:
       ...require_fs(),
+      // Export extra methods:
       ...require_copy2(),
       ...require_empty(),
       ...require_ensure(),
@@ -3272,6 +3283,11 @@ var require_minimatch = __commonJS({
           this.pattern = pattern.substr(negateOffset);
         this.negate = negate;
       }
+      // set partial to true to test if, for example,
+      // "/a/b" matches the start of "/*/b/*/d"
+      // Partial means, if you run out of file before you run
+      // out of pattern, then that's fine, as long as all
+      // the parts match.
       matchOne(file, pattern, partial) {
         var options2 = this.options;
         this.debug(
@@ -5179,7 +5195,10 @@ var transformFile = (content, data) => {
 };
 
 // src/logging.ts
-var log = (...args) => console.log(red("js-templates"), ...args);
+var log = (...args) => (
+  // eslint-disable-next-line no-console
+  console.log(red("js-templates"), ...args)
+);
 
 // src/index.ts
 (async () => {

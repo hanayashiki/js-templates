@@ -43,3 +43,13 @@ Public NPM package with Tsup and Vitest.
 5. PNPM
 6. VSCode Extensions
 
+## NPM Monorepo
+
+```
+npx @chenyuwang/js-templates npm-monorepo my-project
+```
+
+Based on NPM template, and
+
+1. `nx`
+2. `pnpm-workspace`
