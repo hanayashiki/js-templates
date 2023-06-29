@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
+    "lint": "nx run-many -t lint",
     "build": "nx run-many -t build"
   },
   "workspaces": [
