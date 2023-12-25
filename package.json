@@ -13,7 +13,7 @@
     "url": "https://github.com/hanayashiki/js-templates"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "prepare": "pnpm build",
@@ -34,7 +34,7 @@
     "prettier": "^2.7.1",
     "tinyargs": "^0.1.4",
     "tsup": "^6.7.0",
-    "tsx": "^3.9.0",
+    "tsx": "^4.7.0",
     "typescript": "^5.0.4"
   },
   "publishConfig": {

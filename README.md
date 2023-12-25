@@ -11,7 +11,7 @@ Setting up a JavaScript project is difficult. JavaScript tools are a separate an
 ## React SPA
 
 ```
-npx @chenyuwang/js-templates react-spa my-project
+npx @chenyuwang/js-templates@latest react-spa my-project
 ```
 
 Based on `pnpm create vite --template react-ts`, and battery-included.
@@ -31,7 +31,7 @@ Based on `pnpm create vite --template react-ts`, and battery-included.
 ## NPM
 
 ```
-npx @chenyuwang/js-templates npm my-project
+npx @chenyuwang/js-templates@latest npm my-project
 ```
 
 Public NPM package with Tsup and Vitest.
@@ -46,7 +46,7 @@ Public NPM package with Tsup and Vitest.
 ## NPM Monorepo
 
 ```
-npx @chenyuwang/js-templates npm-monorepo my-project
+npx @chenyuwang/js-templates@latest npm-monorepo my-project
 ```
 
 Based on NPM template, and
