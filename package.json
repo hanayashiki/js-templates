@@ -1,6 +1,6 @@
 {
   "name": "@chenyuwang/js-templates",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "commonjs",
   "main": "dist/index.js",
   "bin": {
@@ -35,7 +35,8 @@
     "tinyargs": "^0.1.4",
     "tsup": "^6.7.0",
     "tsx": "^4.7.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "@chenyuwang/eslint-config": "^0.0.1"
   },
   "publishConfig": {
     "access": "public"

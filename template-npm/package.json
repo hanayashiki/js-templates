@@ -41,7 +41,8 @@
     "tsup": "^6.7.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
-    "vitest": "^1.1.0"
+    "vitest": "^1.1.0",
+    "@chenyuwang/eslint-config": "^0.0.1"
   },
   "publishConfig": {
     "access": "public"
