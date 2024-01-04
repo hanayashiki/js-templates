@@ -42,7 +42,7 @@
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0",
-    "@chenyuwang/eslint-config": "^0.0.1"
+    "@chenyuwang/eslint-config": "^0.0.2"
   },
   "publishConfig": {
     "access": "public"

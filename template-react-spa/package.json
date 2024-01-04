@@ -32,6 +32,6 @@
     "vite": "^5.0.10",
     "vite-plugin-fast-react-svg": "^0.3.0",
     "vite-tsconfig-paths": "^3.5.0",
-    "@chenyuwang/eslint-config": "^0.0.1"
+    "@chenyuwang/eslint-config": "^0.0.2"
   }
 }
